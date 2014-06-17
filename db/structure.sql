@@ -333,8 +333,7 @@ CREATE TABLE users (
     send_comment_email boolean DEFAULT true,
     send_comment_web boolean DEFAULT true,
     send_mention_email boolean DEFAULT true,
-    send_mention_web boolean DEFAULT true,
-    hot double precision DEFAULT 0.0
+    send_mention_web boolean DEFAULT true
 );
 
 
@@ -637,4 +636,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140412113810');
 INSERT INTO schema_migrations (version) VALUES ('20140612075008');
 
 INSERT INTO schema_migrations (version) VALUES ('20140617061733');
+
+INSERT INTO schema_migrations (version) VALUES ('20140617081813');
 
