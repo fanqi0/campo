@@ -130,6 +130,7 @@ zh-CN:
     application:
       comments: "评论"
       community: "社区"
+      member: "会员"
       likes: "收藏"
       logout: "退出"
       profile: "个人资料"
@@ -298,6 +299,9 @@ zh-CN:
 
         %{url}
   users:
+    index:
+      all_members: "所有会员"
+      hot_members: "活跃会员"
     comments:
       index:
         comments: "评论"

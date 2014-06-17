@@ -1,0 +1,19 @@
+.main
+  .container
+    .row
+      .col-md-6 
+        .panel
+          .panel-heading
+            h3
+              =t '.hot_members'
+          .panel-body
+      .col-md-6 
+        .panel
+          .panel-heading
+            h3
+              =t '.all_members'
+          .panel-body
+            -@users.each do |user|
+              a
+                h4 href=user_link(user)
+                  =user.name

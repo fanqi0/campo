@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   post 'markdown/preview', to: 'markdown#preview'
 
-  resources :users, only: [:create] do
+  resources :users, only: [:create, :index] do
     collection do
       get :check_email
       get :check_username
