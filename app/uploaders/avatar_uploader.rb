@@ -1,30 +1,23 @@
+require 'carrierwave/processing/mini_magick'
+IMAGE_UPLOADER_ALLOW_IMAGE_VERSION_NAMES = %(normal bigger)
 class AvatarUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MiniMagick
-
-  storage :file
-
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "#{model.class.to_s.underscore}/#{mounted_as}"
   end
 
-  VERSION_SIZES = {
-    normal: 48,
-    bigger: 96
-  }
-
-  def default_url
-    if model.respond_to? :gravatar_url
-      model.gravatar_url(size: VERSION_SIZES[version_name])
+  def url(version_name = "")
+    @url ||= super({})
+    version_name = version_name.to_s
+    return @url if version_name.blank?
+    if not version_name.in?(IMAGE_UPLOADER_ALLOW_IMAGE_VERSION_NAMES)
+      # 故意在调用了一个没有定义的“缩略图版本名称”的时候抛出异常，以便开发的时候能及时看到调错了
+      raise "AvatarUploader version_name:#{version_name} not allow."
     end
-  end
-
-  VERSION_SIZES.each do |version_name, size|
-    version version_name do
-      process resize_to_fill: [size, size]
-    end
+    [@url,version_name].join("!") # 我这里在图片空间里面选用 ! 作为“间隔标志符”
   end
 
   def extension_white_list
     %w(jpg jpeg gif png)
   end
 end
+

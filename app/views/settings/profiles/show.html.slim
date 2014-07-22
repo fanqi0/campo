@@ -18,7 +18,7 @@
                 = f.label :avatar, class: 'control-label col-sm-3'
                 .col-sm-6.user-image-uploader
                   .image
-                    img.img-rounded alt="avatar" src=current_user.avatar.bigger.url
+                    img.img-rounded alt="avatar" src=current_user.avatar.url(:bigger)
                   .uploader
                     = f.file_field :avatar, tabIndex: 1
                     .checkbox

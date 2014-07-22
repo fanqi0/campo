@@ -110,3 +110,6 @@ gem 'social-share-button'
 gem 'impressionist'
 
 gem 'roo'
+
+gem 'rest-client'
+gem 'carrierwave-upyun'

@@ -14,7 +14,7 @@
               .list-group.list-group-campo
                 .list-group-item.comment data-creator-id=@topic.user_id
                   a.list-group-item-avatar href=user_link(@topic.user)
-                    img.img-rounded alt="avatar" src=@topic.user.avatar.normal.url
+                    img.img-rounded alt="avatar" src=@topic.user.avatar.url(:normal)
                   .list-group-item-content
                     .list-group-item-heading
                       a.comment-user href=user_link(@topic.user)
@@ -74,7 +74,7 @@
                 .list-group.list-group-campo
                   .list-group-item.comment
                     a.list-group-item-avatar href=user_link(current_user)
-                      img.img-rounded alt="avatar" src=current_user.avatar.normal.url
+                      img.img-rounded alt="avatar" src=current_user.avatar.url(:normal)
                     .list-group-item-content
                       .list-group-item-heading
                         a.comment-user href=user_link(current_user)
