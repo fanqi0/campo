@@ -47,8 +47,8 @@ html
     - if content_for?(:meta)
       = yield(:meta)
     - else
-      meta keywords=("swift, swiftist, swift语言,swift社区, 编程, 论坛, 教程, 问答, 热门, 新手, 入门, 热门, 最新, 订阅, 分类")
-      meta description=("Swiftist.org是国内领先的swift语言论坛。这里聚集了一大批锐意进取的iOS开发者和swiftist爱好者。Swiftist.org致力于为国内开发者提供详尽的中文文档、代码实例等，助力开发者掌握并使用这门新兴的编程语言。")
+      meta keywords=("论坛,IT课程,公开课,在线教育,IT职业培训,云计算,大数据,互联网营销培训,网络课程,视频教程,编程开发,交互设计,互联网思维,幕课论坛,MOOC,视频课程,职场进修,慕课论坛,在线学习,学习平台,创业,物联网")
+      meta description=("开课吧是关于云计算、大数据、互联网营销、交互设计、编程语言、移动设备等泛IT学科的在线课程，在线教育，职业培训平台。")
 
     javascript:
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -121,9 +121,9 @@ html
             li class=('active' if request.original_fullpath =~ /^\/topics/)
               a href=topics_path
                 = t '.community'
-            li
-              a href=" http://dev.swiftguide.cn/" target="_blank"
-                = t '.guide'
+            /li
+            /  a href=" http://dev.swiftguide.cn/" target="_blank"
+            /    = t '.guide'
             li class=('active' if request.original_fullpath =~ /^\/users/)
               a href=users_path
                 = t '.users'
@@ -135,16 +135,16 @@ html
     footer
       .container
         .copyright
-          = "Swiftist.org社区，分享代码，改变世界。"
+          = "开课吧社区，知识盛宴，改变世界。"
         .powerby
-          | 本站使用Ruby on Rails搭建,
-          = link_to " 参与维护", "http://swiftist.org/topics/11", target: '_blank'
-          | 。图片存储由
-          = link_to "又拍云存储", "https://www.upyun.com/index.html", target: '_blank'
-          | 提供。
+          /| 本站使用Ruby on Rails搭建,
+          /= link_to " 参与维护", "http://swiftist.org/topics/11", target: '_blank'
+          /| 。图片存储由
+          /= link_to "又拍云存储", "https://www.upyun.com/index.html", target: '_blank'
+          /| 提供。
         .friend-links.clearfix
           .link-item.pull-left
-            =link_to "官方微博", "http://weibo.com/u/5171245144", target: '_blank'
+            =link_to "官方微博", "http://weibo.com/kaikeba", target: '_blank'
           - FriendSite.all.each do |friend_site|
             .link-item.pull-left
               =link_to friend_site.name, friend_site.url, target: '_blank'
