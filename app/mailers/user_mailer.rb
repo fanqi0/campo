@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  # include Resque::Mailer
+  include Resque::Mailer
 
   helper :markdown
 
