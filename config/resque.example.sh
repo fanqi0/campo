@@ -13,7 +13,7 @@
 set -e
 set -u
 
-APP_ROOT=/var/www/campo/current
+APP_ROOT=/home/kkb/projects/campo/current
 USER=deploy
 
 TIMEOUT=${TIMEOUT-60}
