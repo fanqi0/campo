@@ -22,9 +22,12 @@ class SessionsController < ApplicationController
         @user = User.new
         @user.username = session[:cas_extra_attributes][:username]
         @user.email = session[:cas_extra_attributes][:email]
+        @user.name = session[:cas_extra_attributes][:name] || session[:cas_extra_attributes][:username]
         if session[:cas_extra_attributes][:confirmed_at].present?
           @user.confirmed = true
         end
+        @user.password = '123456'
+        @user.save!
       end
 
       login_as @user

@@ -38,14 +38,14 @@ class User < ActiveRecord::Base
       if cu.present?
         cu.confirmed_at = Time.now if confirmed_changed?
         cu.username = username if username_changed?
-        cu.mobile = mobile if mobile_changed?
+        # cu.mobile = mobile if mobile_changed?
         cu.save!
       end
     end
   end
 
   def remember_token
-    [id, Digest::SHA512.hexdigest(password_digest)].join('$')
+    [id, Digest::SHA512.hexdigest(password_digest.to_s)].join('$')
   end
 
   def self.find_by_remember_token(token)
