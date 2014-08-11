@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
+  get  'service', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
   post 'markdown/preview', to: 'markdown#preview'

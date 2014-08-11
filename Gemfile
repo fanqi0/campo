@@ -110,3 +110,6 @@ gem 'social-share-button'
 gem 'impressionist'
 
 gem 'roo'
+
+# gem 'rubycas-client', '~> 2.3.9'
+gem 'rubycas-client', :git => 'git://github.com/rubycas/rubycas-client.git'
