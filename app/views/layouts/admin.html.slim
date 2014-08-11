@@ -46,5 +46,8 @@ html
             li class=('active' if controller_name == 'friend_sites')
               a href=admin_friend_sites_path
                 = t '.friend_sites'
+            li class=('active' if controller_name == 'hot_themes')
+              a href=admin_hot_themes_path
+                = t '.hot_themes'
 
     = yield

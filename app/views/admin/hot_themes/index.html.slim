@@ -6,10 +6,10 @@
           =render 'form'
       .panel
         .panel-heading
-          h3.panel-title = "已添加链接"
+          h3.panel-title = "已添加热帖"
 
         .panel-body
-          - @friend_sites.each do |f|
+          - @hot_themes.each do |f|
             .row
               .col-md-3
                 h4
@@ -17,14 +17,11 @@
               .col-md-6
                 h4
                   =f.url
-              .col-md-6
-                h4
-                  = image_tag(f.adfile_url(:thumb)) if f.adfile?
               .col-md-1
                 h4
-                  = link_to "编辑", edit_admin_friend_site_path(f)
+                  = link_to "编辑", edit_admin_hot_theme_path(f)
               .col-md-1
                 h4
-                  = link_to "删除", admin_friend_site_path(f), method: :delete, data: { confirm: 'Are you sure?' }
+                  = link_to "删除", admin_hot_theme_path(f), method: :delete, data: { confirm: 'Are you sure?' }
 
 

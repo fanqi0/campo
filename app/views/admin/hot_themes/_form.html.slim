@@ -1,0 +1,6 @@
+= form_for @hot_theme, url: url_for([:admin, @hot_theme]), html: { class: 'category-form', :multipart => true } do |f|
+  = f.text_field :name, class: 'form-control', placeholder: "帖子名称", tabIndex: 1
+  br
+  = f.text_field :url, class: 'form-control', placeholder: "帖子链接", tabIndex: 1
+  br
+  = f.submit "保存", class: 'btn btn-success'
