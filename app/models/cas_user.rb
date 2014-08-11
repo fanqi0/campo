@@ -40,3 +40,4 @@ class CasUser < ActiveRecord::Base
   self.table_name = "users"
   #validates  :unconfirmed_email, uniqueness: true, presence: true
 end
+
