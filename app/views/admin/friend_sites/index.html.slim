@@ -19,7 +19,7 @@
                   =f.url
               .col-md-6
                 h4
-                  = image_tag(f.adfile_url(:thumb)) if f.adfile?
+                  = image_tag(f.image_url(:thumb)) if f.image?
               .col-md-1
                 h4
                   = link_to "编辑", edit_admin_friend_site_path(f)

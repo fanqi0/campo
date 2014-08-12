@@ -68,7 +68,6 @@ Rails.application.routes.draw do
 
   resources :attachments, only: [:create]
 
-  # resources :adfiles
 
   root 'topics#index'
 

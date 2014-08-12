@@ -25,7 +25,7 @@ class Admin::FriendSitesController < Admin::ApplicationController
 
   private 
     def friend_site_params
-    	params.require(:friend_site).permit(:name, :url, :adfile)
+    	params.require(:friend_site).permit(:name, :url, :image)
     end
     def set_friend_site
       @friend_site = FriendSite.find(params[:id])
