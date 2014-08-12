@@ -1,4 +1,4 @@
-class AvatarUploader < CarrierWave::Uploader::Base
+class AdfileUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   storage :file
