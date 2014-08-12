@@ -8,7 +8,7 @@ class AdminConstraint
 end
 
 Rails.application.routes.draw do
-  get '/users/sign_up', to: 'users#new', as: 'signup'
+  get '/users/sign_up', to: 'users#new', as: 'new_user_registration'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
