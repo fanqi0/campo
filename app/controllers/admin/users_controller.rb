@@ -1,4 +1,4 @@
-  class Admin::UsersController < Admin::ApplicationController
+class Admin::UsersController < Admin::ApplicationController
   before_action :find_user, except: [:index, :locked]
 
   def index
