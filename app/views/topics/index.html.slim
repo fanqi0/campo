@@ -70,13 +70,13 @@
                     .pull-right
                       = category.topics.size
 
-        .panel.friends-sites
-          .panel-body
-            h4.text-left.title
+        .panel
+          .panel-heading
+            h4.panel-title
               = "热门帖子"
               - HotTheme.all.order(created_at: :desc).each do |hot_theme|
-                li
-                  a href= hot_theme.url
+                .list-group.list-group-campo
+                  a.list-group-item href= hot_theme.url
                     = hot_theme.name
 
         .panel.friends-sites
