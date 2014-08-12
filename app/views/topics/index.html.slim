@@ -15,7 +15,7 @@
         .panel
           .panel-heading.clearfix
             h4 传说，97.50%看到这里的女神、男神~经都会……
-            h4 公告：社区发贴回复支持<a href='https://github.com/riku/Markdown-Syntax-CN' target="_blank">Markdown语法 </a>。
+            /h4 公告：社区发贴回复支持<a href='https://github.com/riku/Markdown-Syntax-CN' target="_blank">Markdown语法 </a>。
             h5
       .col-md-9
         .panel
@@ -49,10 +49,10 @@
 
       .col-md-3
         = render 'search_form'
-        .panel
-          .panel-body
-            a.btn.btn-warning.btn-block href=feed_topics_path
-              = t '.create_rss'
+        /.panel
+        /  .panel-body
+        /    a.btn.btn-warning.btn-block href=feed_topics_path
+        /      = t '.create_rss'
         .panel
           .panel-body
             a.btn.btn-success.btn-block href=new_topic_path(category_id: @category.try(:slug))
@@ -70,10 +70,20 @@
                     .pull-right
                       = category.topics.size
 
-        /.panel.friends-sites
-        /  .panel-body
-        /    h4.text-center.title
-        /      = t '.sponsor'
-        /    .site-item.text-center
-        /      a href="https://www.upyun.com/index.html" target="_blank"
-        /        =image_tag "/upyun_logo.png"
+        .panel
+          .panel-heading
+            h4.panel-title
+              = "热门帖子"
+              - HotTheme.all.order(created_at: :desc).each do |hot_theme|
+                .list-group.list-group-campo
+                  a.list-group-item href= hot_theme.url
+                    = hot_theme.name
+
+        .panel.friends-sites
+          .panel-body
+            h4.text-center.title
+              = "友情链接"
+            .text-center
+              - FriendSite.all.each do |friend_site|
+                = link_to friend_site.url do
+                  = image_tag friend_site.image_url, size: "160x80"

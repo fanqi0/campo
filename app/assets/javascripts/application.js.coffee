@@ -12,7 +12,6 @@
 
 
 $ ->
-  console.log "对源代码感兴趣？更多关于本站技术栈信息请参考: http://swiftist.org/topics/11"
 
 $(document).on 'page:update', ->
   $('[data-behaviors~=autosize]').autosize()

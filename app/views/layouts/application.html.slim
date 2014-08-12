@@ -1,36 +1,3 @@
-/!
-  Swiftist.org
-   __          _  __ _   _     _
-  / _\_      _(_)/ _| |_(_)___| |_   ___  _ __ __ _
-  \ \\ \ /\ / / | |_| __| / __| __| / _ \| '__/ _` |
-  _\ \\ V  V /| |  _| |_| \__ \ |_ | (_) | | | (_| |
-  \__/ \_/\_/ |_|_|  \__|_|___/\__(_)___/|_|  \__, |
-                                              |___/
-  -::::::::::::::::::::::::::::::::::::::::::::::::-
-  -:::::::::::////////////::::::::::::::::::::::::::
-  :::::::////////////////////:::::::::::::::::::::::
-  :///////////////////////+++/::::::::::::::::::::::
-  :///////////////////+++++++++-.://///////////////:
-  ://///////////:/++++++++++++++- `-///////////////:
-  :////////://++/-:+++++++++++ooo-  `://///////////:
-  ://////+++:.:+++:`:+++++oooooooo`   -////////////:
-  :/++++++++++-`-/++. -+oooooooooo:    .////////////
-  /++++++++++++/. .:+/` ./ooooooos/     .///////////
-  /++++++++++++++:`  -/:  `-+ossss/      ://////////
-  /+++++++++ooooooo:   `.`   .:oss-      `/++++++++/
-  /+++++ooooooooooooo-          .:        /++++++++/
-  /+++oooooooooooooooso:                  /++++++++/
-  /++++++oooooooossssssss/`               +++++++++/
-  /+++++:.-/oosssssssssssss+`            `+++++++++/
-  /+++++++-  `.-:/+++++/:-.               `/++++++++
-  /+++++++++:`                             `++++++++
-  /ooooooooooo/-`                    ``.`   -oooooo+
-  /oooooooooooooo+/-.`           `-/+oooo+/`.oooooo+
-  /oooooooooooooooooooo+///////+oooooooooooo+oooooo+
-  +oooooooooooooooooooooooooooooooooooooooooooooooo+
-  +oooooooooooooooooooooooooooooooooooooooooooooooo+
-  +oooooooooooooooooooooooooooooooooooooooooooooooo+
-  /oooooooooooooooooooooooooooooooooooooooooooooooo+
 
 doctype html
 html
@@ -121,6 +88,9 @@ html
             li class=('active' if request.original_fullpath =~ /^\/topics/)
               a href=topics_path
                 = t '.community'
+            li
+              a href='http://www.kaikeba.com/help_center#common_question-anchor' target="_blank"
+                = t '新手帮助'
             /li
             /  a href=" http://dev.swiftguide.cn/" target="_blank"
             /    = t '.guide'
@@ -128,14 +98,23 @@ html
               a href=users_path
                 = t '.users'
 
+            li
+              a href='http://www.kaikeba.com' target="_blank"
+                h4
+                  = t '返回开课吧'
+
+
+
     - if login? and !current_user.confirmed?
       = render 'share/user_confirm_required'
     = yield
 
     footer
       .container
-        .copyright
-          = "开课吧社区，知识盛宴，改变世界。京ICP备13032407号"
+        .copyright.text-center
+          = "北京开云慧科网络科技有限公司版权所有   京ICP备13032407号-1   京公网安备 11010802013162"
+          .br
+          = " 公司地址：北京市海淀区学院路35号世宁大厦302A  邮箱：kefu@kaikeba.com"
         .powerby
           /| 本站使用Ruby on Rails搭建,
           /= link_to " 参与维护", "http://swiftist.org/topics/11", target: '_blank'
@@ -144,7 +123,7 @@ html
           /| 提供。
         .friend-links.clearfix
           .link-item.pull-left
-            =link_to "官方微博", "http://weibo.com/kaikeba", target: '_blank'
-          - FriendSite.all.each do |friend_site|
-            .link-item.pull-left
-              =link_to friend_site.name, friend_site.url, target: '_blank'
+            /=link_to "官方微博", "http://weibo.com/kaikeba", target: '_blank'
+          /- FriendSite.all.each do |friend_site|
+          /  .link-item.pull-left
+          /    =link_to friend_site.name, friend_site.url, target: '_blank'

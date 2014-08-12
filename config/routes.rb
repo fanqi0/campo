@@ -68,6 +68,7 @@ Rails.application.routes.draw do
 
   resources :attachments, only: [:create]
 
+
   root 'topics#index'
 
   scope path: '~:username', module: 'users', as: 'user' do
@@ -96,7 +97,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
 
     resources :friend_sites
-
+    resources :hot_themes
     resources :users, only: [:index, :show, :update, :destroy] do
       collection do
         get :locked

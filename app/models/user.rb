@@ -24,8 +24,7 @@ class User < ActiveRecord::Base
   scope :top, ->(n) { order(comments_count: :desc, topics_count: :desc).limit(n) }
 
   after_create :syn_info_to_sso
-  before_save  :syn_confirmed_at_to_sso,
-
+  before_save  :syn_confirmed_at_to_sso
   def syn_info_to_sso
     cu = CasUser.create_with(self.attributes.keep_if{ |k, v| (CasUser.attribute_names - ['id']).include?(k) }).find_or_initialize_by(email: email)
     cu.encrypted_password = devise_password_digest(self.password) if cu.encrypted_password.blank? or cu.crypted_password.blank?
