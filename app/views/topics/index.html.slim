@@ -85,5 +85,5 @@
               = "友情链接"
             .text-center
               - FriendSite.all.each do |friend_site|
-                = link_to friend_site.url do
+                = link_to friend_site.url, target: "_blank" do
                   = image_tag friend_site.image_url, size: "160x"
